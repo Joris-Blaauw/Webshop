@@ -1,0 +1,27 @@
+#
+#
+!!! IMPORTANT !!!
+alles tussen <<>> moet je niet zeggen, dat is gwn extra info voor de vragen
+#
+#
+
+-- Introduction
+(Mitch) --------------
+-- Name: "What's the name of your company?"
+-- Type of product: "What kind of product would you like to sell on the webshop", more info
+-- Company Background / Info: "What does your company do", more info for possible info page
+-- Target audience: "What kind of audience would you like to reach with this webshop", "Where would people find the webshop"
+(Joris) --------------
+-- Characteristics: "Is there anything else you would like the webshop to have? <<iterate on future categories, e.g. "maybe a login system or an admin page">>"
+-- Characteristics: "Is there anything important to the company that you would like to be shown on the website?"
+-- Logo: "Does your company have a specific logo we should use?"
+-- Styling: "What type of <<styling e.g. font, colors>> would you like the website to have?"
+-- Features: "Is there anything specific that you would like the webshop to have? <<iterate on future categories, e.g. "maybe a login system or an admin page">>"
+-- Inspiration: "Are there any websites that you like the look of that we can take inspiration from?"
+(Mees) --------------
+-- Managing system: "In what way would you like to manage the users / products of the webshop"
+-- What pages: "What are all the other pages you would like? <e.g. info>"
+-- Navigation: "How would you like users to navigate between pages?"
+-- Product info: "What info would you like to be displayed about a product?"
+-- Login info: "What info would you like the user to give when making an account?"
+-- Any further questions the client might have

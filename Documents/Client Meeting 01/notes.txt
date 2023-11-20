@@ -1,0 +1,76 @@
+they offer PACKAGES for specific areas of the house
+8 years ago, client and partner, 4 years later partner left, now theres a new partner. hoping and planning to expand, small business.
+
+owner has background in big cleaning company, 20 y of experience.
+
+casual consumers who live in a house, age 25 - 50, old peeps have other strict methods
+
+admin system, user friendly.
+
+3 pages.  info, products, tips on cleaning (videos and text)
+
+login system would be nice.
+
+
+first page some info pics ^ text
+
+no logo, name instead
+
+colors: black white ^ yellow bright
+
+search or filter, shopping cart.
+
+product info:
+name, pic, desc and price. 
+
+
+-----------------------------
+
+-- Introduction
+
+(Mitch) --------------
+    -- Name: "What's the name of your company?"
+Client response: partners in grime
+    -- Type of product: "What kind of product would you like to sell on the webshop", more info
+Client response: cleaning products for indoors and around the house
+    -- Company Background / Info: "What does your company do", more info for possible info page
+Client response: started around 8 years ago, run by two people
+    -- Target audience: "What kind of audience would you like to reach with this webshop", "Where would people find the webshop"
+Client response: consumers with the age range between 25 - 50
+() --------------
+    -- Characteristics: "Is there anything else you would like the webshop to have? <<iterate on future categories, e.g. "maybe a login system or an admin page">>"
+Client response: admin page would be great, has to be user friendly, 3 pages
+    -- Characteristics: "Is there anything important to the company that you would like to be shown on the website?"
+Client response: general information and history about the company visible on the website
+    -- Logo: "Does your company have a specific logo we should use?"
+Client response: no logo available yet, put the name of the company in text
+    -- Styling: "What type of <<styling e.g. font, colors>> would you like the website to have?"
+Client response: colors in black, white and yellow, "strong" font preferred, easy to read
+    -- Features: "Is there anything specific that you would like the webshop to have? <<iterate on future categories, e.g. "maybe a login system or an admin page">>"
+Client response: client wants a search before and a shopping cart, history of purchases
+    -- Inspiration: "Are there any websites that you like the look of that we can take inspiration from?"
+Client response: none
+() -------------- 
+    -- Managing system: "In what way would you like to manage the users / products of the webshop"
+Client response: be able to change every detail of a product
+    -- What pages: "What are all the other pages you would like? <e.g. info>"
+Client response: first page introducing the company, second page sells the products, third page tips about cleaning
+    -- Navigation: "How would you like users to navigate between pages?"
+Client response: no preference, leaves it up to us
+    -- Product info: "What info would you like to be displayed about a product?"
+Client response: title, price, description, images
+    -- Login info: "What info would you like the user to give when making an account?"
+Client response: name and email, address
+    -- Any further questions the client might have
+
+
+
+extra notes:
+
+price unit in euros
+a part at the footer of the page where contact info of the company can be found
+
+
+
+
+extra de vragen herhalen, samenvatten
