@@ -1,0 +1,33 @@
+@font-face {
+    font-family: Bebas Neue;
+    src: url("Fonts/BebasNeue-Regular.ttf");
+}
+@font-face {
+    font-family: Noto Sans Glagolitic;
+    src: url("Fonts/NotoSansGlagolitic-Regular.ttf");
+}
+body {
+    margin: 0
+}
+:root {
+    --primary: rgba(0, 0, 0, 100%);
+    --secondary: rgba(255, 255, 255, 100%);
+    --accent: rgba(255, 255, 0, 100%);
+    --title-font: Bebas Neue;
+    --title-size: 55px;
+    --text-font: Noto Sans Glagolitic;
+    --text-size: 16px;
+}
+.Header {
+    background-color: var(--primary);
+    color: var(--accent);
+    min-height: 8rem;
+    text-align: center;
+}
+.Header h1 {
+    margin: 0;
+    padding-top: 2rem;
+    font-family: var(--title-font);
+    font-size: var(--title-size);
+    letter-spacing: 2px;
+}
