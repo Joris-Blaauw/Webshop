@@ -25,9 +25,29 @@ body {
     text-align: center;
 }
 .Header h1 {
-    margin: 0;
+    margin-top: 0;
     padding-top: 2rem;
     font-family: var(--title-font);
     font-size: var(--title-size);
     letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+.HeaderNavButton {
+    display: inline-block;
+    flex: 1;
+    border: solid var(--primary) 2px;
+    border-radius: 10px;
+    height: 30px;
+    background-color: var(--accent);
+    transition: all 0.1s ease-out;
+    text-decoration: none;
+    color: var(--primary);
+    font-family: var(--text-font);
+    margin: 0 1rem;
+}
+.HeaderNavButton:hover {
+    filter: brightness(0.8);
+}
+.HeaderNavContainer {
+    display: flex;
 }
