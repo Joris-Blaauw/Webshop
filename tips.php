@@ -13,7 +13,6 @@
 </html>
 
 <?php
-
 $servername = "145.53.245.193";
 $username = "webshop";
 $password = "webcrimes";
@@ -29,13 +28,13 @@ if ($conn->connect_error) {
 }
 
 /* create header*/
-$sql = "SELECT Title, Logo FROM page WHERE Role = '$page'";
+$sql = "SELECT Title FROM page WHERE Role = '$page'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 1) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
-    echo "<img src='" . $row["Logo"] . "'>" . "<h1>". $row["Title"] . "</h1>";
+    echo "<h1>". $row["Title"] . "</h1>";
   }
 } else {
   echo "error";
@@ -54,5 +53,4 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn); 
-
 ?>
