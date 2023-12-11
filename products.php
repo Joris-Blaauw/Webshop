@@ -1,19 +1,13 @@
 <?php
 session_start();
 
-$servername = "145.53.245.193";
-$username = "webshop";
-$password = "webcrimes";
-$dbname = "webshop";
-$page = "Products";
-$sql = "SELECT * FROM product";
+require 'Prefabs/Shared.php';
+$DBHandler = new Shared\DB("Products");
+$Queries = new Shared\Queries();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-$result = mysqli_query($conn, $sql);
-$AllProducts = mysqli_fetch_all($result);
-mysqli_close($conn);
+$AllProducts = $DBHandler->FetchAssoc("SELECT * FROM product");
 
-
+$DBHandler->CloseConn();
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,7 +24,7 @@ mysqli_close($conn);
 <ul>
     <?php
     foreach ($AllProducts as $Product) {
-        echo "<li>Name: $Product[1]<br>Image: $Product[2]<br>Description: $Product[3]<br>Price: $Product[4]<br>Unit: $Product[5]<br>Delivery_Time: $Product[6]<br>Stock: $Product[7]<br>Sale: $Product[8]<br>Category: $Product[9]</li><br>";
+        echo "<li>Name: $Product[Title]<br>Image: $Product[Img]<br>Description: $Product[Description]<br>Price: $Product[Price]<br>Unit: $Product[Unit]<br>Delivery_Time: $Product[Delivery_Time]<br>Stock: $Product[Stock]<br>Sale: $Product[Discount]<br>Category: $Product[Category]</li><br>";
     }
     ?>
 </ul>
