@@ -6,8 +6,6 @@ $DBHandler = new Shared\DB($PageName);
 $Queries = new Shared\Queries();
 
 $PageInfo = $DBHandler->FetchPageInfo();
-
-
 $Tips = $DBHandler->FetchAssoc("SELECT Title, Content, Img FROM section WHERE Page = '$PageName' ORDER BY Ordrr");
 
 $DBHandler->CloseConn();
@@ -19,7 +17,7 @@ $DBHandler->CloseConn();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Prefabs/defaultStyle.css" rel="stylesheet">
-    <title>Tips & Tricks</title>
+    <title><?php echo $PageInfo["Title"]?></title>
 </head>
     <body>
         <?php include('Prefabs/header.html')?>

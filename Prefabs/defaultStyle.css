@@ -17,11 +17,30 @@ body {
 :root {
     --primary: rgba(0, 0, 0, 100%);
     --secondary: rgba(255, 255, 255, 100%);
-    --accent: rgba(255, 255, 0, 100%);
+    --accent: rgba(255, 255,     0, 100%);
     --title-font: Bebas Neue;
     --title-size: 5rem;
     --text-font: Noto Sans Glagolitic;
     --text-size: 16px;
+    --error-color: #bf0505;
+    --success-color: #05bf05;
+    --neutral-color: #6f6f6f;
+    --products-per-column: 1;
+}
+@media (min-width: 500px) {
+    :root {
+        --products-per-column: 2;
+    }
+}
+@media (min-width: 1000px) {
+    :root {
+        --products-per-column: 3;
+    }
+}
+@media (min-width: 1500px) {
+    :root {
+        --products-per-column: 4;
+    }
 }
 /* HEADER STYLES */
 .Header {
