@@ -17,6 +17,7 @@ $DBHandler->CloseConn();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Prefabs/defaultStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/Tips.css">
     <title><?php echo $PageInfo["Title"]?></title>
 </head>
     <body>
@@ -26,7 +27,7 @@ $DBHandler->CloseConn();
 
         if ($Tips) {
             foreach ($Tips as $Tip) {
-                echo $Tip["Title"] . "<br>" . $Tip["Content"] . "<br> <br>";
+                echo "$Tip[Title]<br>$Tip[Content]<br> <br>";
             }
         }
         ?>
