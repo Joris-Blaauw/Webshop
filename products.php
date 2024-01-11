@@ -1,30 +1,38 @@
 <?php
-session_start();
+session_start(); // Initialise session
 if (!array_key_exists("ShoppingCartItems", $_SESSION)) {
     $_SESSION['ShoppingCartItems'] = array();
 }
 
+// Load shared class
 require 'Prefabs/Shared.php';
 $DBHandler = new Shared\DB("Products");
 $Queries = new Shared\Queries();
 
+// Fetch page info and products
 $PageInfo = $DBHandler->FetchPageInfo();
 $AllProducts = $DBHandler->FetchAssoc("SELECT * FROM product");
 
-if (!empty($_POST)) {
-    if (array_key_exists("ClickedProductId", $_POST)) {
-        if (array_key_exists("ShoppingCartItems", $_SESSION)) {
+if (!empty($_POST)) { // If $_POST Not empty
+    if (array_key_exists("ClickedProductId", $_POST)) { // Check if a product is clicked
+        if (array_key_exists("ShoppingCartItems", $_SESSION)) { // Check if there is a shopping cart. *1
+            // Fetch the clicked product from the database using its id, and add amount (currently 1)
             $ProductToAdd = $DBHandler->FetchAssoc("SELECT * FROM product WHERE Id = $_POST[ClickedProductId]")[0];
             $ProductToAdd["Amount"] = 1;
-            if (!empty($_SESSION['ShoppingCartItems'])) {
-                foreach ($_SESSION["ShoppingCartItems"] as $Product) {
+            $ProductFound = false;
+            if (!empty($_SESSION['ShoppingCartItems'])) { /* If the shopping cart is not empty, check each item and
+                see if it matches the clicked item. if so, increment the amount by 1 instead of adding a new instance */
+                foreach ($_SESSION["ShoppingCartItems"] as $Key => $Product) {
                     if ($Product["Id"] == $_POST['ClickedProductId']) {
-                        $ProductToAdd["Amount"] = $Product["Amount"] + 1;
+                        $_SESSION["ShoppingCartItems"][$Key]["Amount"] += 1;
+                        $ProductFound = true;
                     }
                 }
             }
-            $_SESSION["ShoppingCartItems"][] = $ProductToAdd;
-        } else {
+            if (!$ProductFound) { // If there was no instance of the product in the cart, add it to the cart as its own instance.
+                $_SESSION["ShoppingCartItems"][] = $ProductToAdd;
+            }
+        } else { // *1 If not, set it to an empty array
             $_SESSION["ShoppingCartItems"] = array();
         }
     }
@@ -46,7 +54,7 @@ $DBHandler->CloseConn();
 <body>
 <?php include('Prefabs/header.html') ?>
 <div class="ProductContainer">
-    <?php
+    <?php // List and format all products fetched from the database
     foreach ($AllProducts as $Product) {
         echo "<div class='ProductCard'><h2 class='ProductTitle'>$Product[Title]</h2><br><img src='$Product[Img]' alt='Product Image' class='ProductImg'><br><span class='ProductDesc'>$Product[Description]</span><br><span class='ProductPrice'>".($Product["Discount"] ? "<span class='ProductOldPrice'>€$Product[Price]</span> <span class='ProductNewPrice'>€".$Product["Price"]-$Product["Discount"]."</span>" : "€".$Product["Price"])."</span><br><form action='products.php' method='post'><input type='hidden' name='ClickedProductId' value='$Product[Id]'><input type='submit' class='ProductButton' value='In Winkelmandje'></form></div>";
     }

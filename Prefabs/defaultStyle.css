@@ -1,34 +1,36 @@
 /* FONTS */
-@font-face {
+@font-face { /* Title Font */
     font-family: Bebas Neue;
     src: url("../Fonts/BebasNeue-Regular.ttf");
 }
-@font-face {
+@font-face { /* Text Font */
     font-family: Noto Sans Glagolitic;
     src: url("../Fonts/NotoSansGlagolitic-Regular.ttf");
 }
 
 /* STYLES AND VARIABLES */
-body {
+body { /* Remove the default body styling and add a minimum height of the whole screen */
     margin: 0;
     min-height: 100vh;
     position: relative;
 }
-:root {
-    --primary: rgba(0, 0, 0, 100%);
-    --secondary: rgba(255, 255, 255, 100%);
-    --tertiary: rgba(78, 80, 85, 100%);
-    --accent: rgba(255, 255, 0, 100%);
-    --secondary-accent: rgba(28, 30, 35, 100%);
-    --title-font: Bebas Neue;
-    --title-size: 5rem;
-    --text-font: Noto Sans Glagolitic;
-    --text-size: 16px;
-    --error-color: #bf0505;
-    --success-color: #05bf05;
-    --neutral-color: #6f6f6f;
-    --products-per-column: 1;
+
+:root { /* Create Root Variables to be used in all other css files as well */
+    --primary: rgba(0, 0, 0, 100%); /* Primary color of the website */
+    --secondary: rgba(200, 200, 200, 100%); /* Secondary color of the website */
+    --tertiary: rgba(78, 80, 85, 100%); /* Tertiary color of the website */
+    --accent: rgba(255, 255, 0, 100%); /* Accent color of the website */
+    --secondary-accent: rgba(28, 30, 35, 100%); /* Secondary Accent color of the website */
+    --title-font: Bebas Neue; /* Font to be used by the big title in the header */
+    --title-size: 5rem; /* Size to be used by the big title in the header */
+    --text-font: Noto Sans Glagolitic; /* Font to be used by all text */
+    --text-size: 16px; /* Text to be used by most text */
+    --error-color: #bf0505; /* Color for error messages / bad things */
+    --success-color: #05bf05; /* Color for success messages / good things */
+    --neutral-color: #6f6f6f; /* Neutral color for descriptions that don't have to be as visible as titles */
+    --products-per-column: 1; /* Ignore this, it gets changed using media queries */
 }
+/* Change the amount of products to be displayed on the product page based on screen width */
 @media (min-width: 500px) {
     :root {
         --products-per-column: 2;

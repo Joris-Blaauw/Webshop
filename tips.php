@@ -1,12 +1,12 @@
 <?php
-$PageName = "Tips";
-
+// Loading shared class
 require 'Prefabs/Shared.php';
-$DBHandler = new Shared\DB($PageName);
+$DBHandler = new Shared\DB("Tips");
 $Queries = new Shared\Queries();
 
+// Fetch page info and tips out of database
 $PageInfo = $DBHandler->FetchPageInfo();
-$Tips = $DBHandler->FetchAssoc("SELECT Title, Content, Img FROM section WHERE Page = '$PageName' ORDER BY Ordrr");
+$Tips = $DBHandler->FetchAssoc("SELECT Title, Content, Img FROM section WHERE Page = 'Tips' ORDER BY Ordrr");
 
 $DBHandler->CloseConn();
 ?>
@@ -21,7 +21,7 @@ $DBHandler->CloseConn();
 </head>
     <body>
         <?php include('Prefabs/header.html')?>
-        <?php
+        <?php // Loop over each tip in the database if there are any, and display it in html format
         echo "<h1>". $PageInfo["Title"] . "</h1>";
 
         if ($Tips) {

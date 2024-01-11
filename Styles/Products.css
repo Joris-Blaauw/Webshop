@@ -5,12 +5,12 @@
 }
 
 body {
-    background-color: var(--tertiary);
+    /*background-color: var(--tertiary);*/
 }
 
 .ProductCard {
     display: inline-block;
-    background-color: var(--secondary-accent);
+    background-color: var(--tertiary);
     border: solid 2px var(--accent);
     overflow: hidden;
     margin: 1rem;

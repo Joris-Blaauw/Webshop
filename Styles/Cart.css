@@ -1,0 +1,77 @@
+.ItemList {
+    margin-top: 2rem;
+}
+
+.CartItem {
+    display: flex;
+    background-color: var(--secondary);
+    border: solid 1px black;
+    width: 95%;
+    min-height: 3rem;
+    margin: 1rem auto;
+}
+
+.CartItem span {
+    border: solid 1px black;
+    display: inline-block;
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    min-height: 3rem;
+    margin: 0;
+}
+
+.CartItemTitle {
+    border: solid 1px black;
+    width: 25%;
+}
+
+.CartItemPrice {
+    border: solid 1px black;
+    width: 10%;
+}
+
+.CartItemOldPrice {
+        color: var(--error-color);
+    text-decoration: line-through;
+}
+
+.CartItemNewPrice {
+    color: var(--success-color);
+}
+
+.CartItemProductDesc {
+    width: 50%;
+}
+
+.CartItemAmount {
+    width: 5%;
+}
+
+.CartItemButtons {
+    width: 10%;
+}
+
+.CartItemButtons form {
+    display: inline;
+}
+
+.CartItemDeleteSubmitButton {
+    background-color: var(--neutral-color);
+    border: solid var(--primary) 1px;
+    font-size: 2.5rem;
+    border-radius: 2px;
+}
+
+.CartItemDecrementSubmitButton {
+    background-color: var(--error-color);
+    border: solid var(--primary) 1px;
+    font-size: 2.5rem;
+    border-radius: 2px;
+}
+
+.CartItemIncrementSubmitButton {
+    background-color: var(--success-color);
+    border: solid var(--primary) 1px;
+    font-size: 2.5rem;
+    border-radius: 2px;
+}
