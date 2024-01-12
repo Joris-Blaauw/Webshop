@@ -1,0 +1,37 @@
+body {
+    background-color: var(--secondary-accent);
+}
+
+.TipHeader {
+    color:var(--accent);
+    font-family:var(--text-font);
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    font-size: 50px
+}
+
+.TipTitle {
+    color:var(--accent);
+    font-family:var(--text-font);
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    font-size: 20px
+}
+
+.TipText {
+    color:var(--accent);
+    font-family:var(--text-font);
+    display:flex;
+    justify-content:center;
+    text-align: center;
+    align-content:center;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.TipContainer {
+    padding-bottom: 2rem;
+}
+

@@ -1,18 +1,45 @@
 body {
-    background-color:#353037
+    background-color:var(--secondary-accent);
 }
 
 .infotextheader {
-    display:flex;
+    display: flex;
+    align-content:center;
     justify-content:center;
-    color:var(--accent);
-    font-family:var(--text-font);
+    color: var(--accent);
+    font-family: var(--text-font);
 }
 
 .infotextbody {
     display:flex;
+    align-content:center;
     justify-content:center;
     color:var(--accent);
     font-family:var(--text-font);
 
+}
+
+.infotextbodybutton {
+    display: inline-flex;
+    flex: 1;
+    border: solid var(--primary) 2px;
+    border-radius: 10px;
+    height: 30px;
+    background-color: var(--accent);
+    transition: all 0.1s ease-out;
+    text-decoration: none;
+    color: var(--primary);
+    font-family: var(--text-font);
+    font-weight: bold;
+    margin: 0 23rem;
+    font-size: 1.3rem;
+    justify-content:center;
+}
+.infotextbodybutton:hover {
+    filter: brightness(0.8);
+}
+
+.infotextbuttoncontainer {
+    display:flex;
+    justify-content:center;
 }

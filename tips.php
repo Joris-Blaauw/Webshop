@@ -23,11 +23,11 @@ $DBHandler->CloseConn();
     <body>
         <?php include('Prefabs/header.html')?>
         <?php // Loop over each tip in the database if there are any, and display it in html format
-        echo "<h1>". $PageInfo["Title"] . "</h1>";
+        echo "<h2 class='TipHeader'>". $PageInfo["Title"] . "</h2>";
 
         if ($Tips) {
             foreach ($Tips as $Tip) {
-                echo "$Tip[Title]<br>$Tip[Content]<br> <br>";
+                echo "<div class='TipContainer'><h3 class='TipTitle'>$Tip[Title]</h3><p class='TipText'>$Tip[Content]</p></div>";
             }
         }
         ?>

@@ -21,8 +21,11 @@ $DBHandler->CloseConn();
 </head>
 <body>
 <?php include('Prefabs/header.html') ?>
-<h1 class="infotextheader">Over ons</h1>
-<p class="infotextbody">Partners in Grime is een schoonmaakbedrijf met al 20 jaar ervaring in het helpen schoonhouden van jou huis.<br>Het beste schoonmaakbedrijf binnen Europa</p>
+<h1 class="infotextheader">About us</h1>
+<p class="infotextbody">Partners in Grime is a cleaning company with well over 20 years of experience in keeping your house clean and tidy.</p>
+<p class="infotextbody">The best cleaning company in all of Europe!</p>
+<p class="infotextbody">placeholder</p>
+<div class="infotextbuttoncontainer"><a href="products.php" class="infotextbodybutton">Take me to the shop!</a></div>
 <?php include('Prefabs/footer.html') ?>
 </body>
 </html>
