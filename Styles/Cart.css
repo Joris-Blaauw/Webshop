@@ -31,7 +31,7 @@
 }
 
 .CartItemOldPrice {
-        color: var(--error-color);
+    color: var(--error-color);
     text-decoration: line-through;
 }
 
@@ -55,23 +55,20 @@
     display: inline;
 }
 
-.CartItemDeleteSubmitButton {
-    background-color: var(--neutral-color);
+.CartItemSubmitButton {
     border: solid var(--primary) 1px;
     font-size: 2.5rem;
-    border-radius: 2px;
+    border-radius: 0;
+}
+
+.CartItemDeleteSubmitButton {
+    background-color: var(--neutral-color);
 }
 
 .CartItemDecrementSubmitButton {
     background-color: var(--error-color);
-    border: solid var(--primary) 1px;
-    font-size: 2.5rem;
-    border-radius: 2px;
 }
 
 .CartItemIncrementSubmitButton {
     background-color: var(--success-color);
-    border: solid var(--primary) 1px;
-    font-size: 2.5rem;
-    border-radius: 2px;
 }

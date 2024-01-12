@@ -9,12 +9,6 @@
 }
 
 /* STYLES AND VARIABLES */
-body { /* Remove the default body styling and add a minimum height of the whole screen */
-    margin: 0;
-    min-height: 100vh;
-    position: relative;
-}
-
 :root { /* Create Root Variables to be used in all other css files as well */
     --primary: rgba(0, 0, 0, 100%); /* Primary color of the website */
     --secondary: rgba(200, 200, 200, 100%); /* Secondary color of the website */
@@ -30,6 +24,14 @@ body { /* Remove the default body styling and add a minimum height of the whole 
     --neutral-color: #6f6f6f; /* Neutral color for descriptions that don't have to be as visible as titles */
     --products-per-column: 1; /* Ignore this, it gets changed using media queries */
 }
+
+body { /* Remove the default body styling and add a minimum height of the whole screen */
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--secondary-accent);
+}
+
 /* Change the amount of products to be displayed on the product page based on screen width */
 @media (min-width: 500px) {
     :root {
@@ -80,6 +82,7 @@ body { /* Remove the default body styling and add a minimum height of the whole 
 .HeaderNavButton:hover {
     filter: brightness(0.8);
 }
+
 .HeaderNavContainer {
     display: flex;
     padding-bottom: 5px;

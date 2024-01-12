@@ -4,10 +4,6 @@
     grid-template-columns: repeat(var(--products-per-column), minmax(25%, 1fr));
 }
 
-body {
-    /*background-color: var(--tertiary);*/
-}
-
 .ProductCard {
     display: inline-block;
     background-color: var(--tertiary);
@@ -21,7 +17,7 @@ body {
 }
 
 .ProductCard:hover {
-    box-shadow: var(--accent) 0px 0px;
+    box-shadow: var(--accent) 0 0;
     transform: scale(102%);
 }
 
@@ -72,7 +68,39 @@ body {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    filter: invert(100%);
+    transition: all 0.1s ease-out;
 }
+
 .ShoppingCartIcon img {
     width: 100%;
+}
+
+.ShoppingCartIcon:hover {
+    transform: scale(102%);
+}
+
+.SearchBarContainer {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.CategorySelector {
+    margin-right: 1rem;
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+    border: dashed var(--accent) 2px;
+    background-color: var(--primary);
+    color: white;
+}
+
+.CategorySubmit {
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+    background-color: var(--primary);
+    border: dashed var(--accent) 2px;
+    color: white;
 }

@@ -38,6 +38,24 @@ if (!empty($_POST)) { // If $_POST Not empty
     }
 }
 
+if (array_key_exists("CategorySelector", $_POST)) {
+    $SelectedCategory = $_POST["CategorySelector"];
+    if ($SelectedCategory == "All") {
+        $FilteredProducts = $AllProducts;
+    } else {
+        $FilteredProducts = array();
+        foreach ($AllProducts as $Product) {
+            $CategoryArray = explode(",", $Product["Category"]);
+            if (in_array($SelectedCategory, $CategoryArray)) {
+                $FilteredProducts[] = $Product;
+            }
+        }
+    }
+} else {
+    $SelectedCategory = "All";
+    $FilteredProducts = $AllProducts;
+}
+
 $DBHandler->CloseConn();
 ?>
 <!doctype html>
@@ -53,10 +71,20 @@ $DBHandler->CloseConn();
 </head>
 <body>
 <?php include('Prefabs/header.html') ?>
+<form id="CategoryForm" class="SearchBarContainer" method="POST">
+    <label for="CategoryDropdown"></label>
+    <select onchange="submitCategoryForm()" name="CategorySelector" id="CategoryDropdown" class="CategorySelector">
+        <?php foreach (unserialize($PageInfo["Metadata"]) as $Category) {echo "<option value='$Category' ".($Category == $SelectedCategory ? "selected" : "").">$Category</option>";} ?>
+    </select>
+</form>
 <div class="ProductContainer">
     <?php // List and format all products fetched from the database
-    foreach ($AllProducts as $Product) {
-        echo "<div class='ProductCard'><h2 class='ProductTitle'>$Product[Title]</h2><br><img src='$Product[Img]' alt='Product Image' class='ProductImg'><br><span class='ProductDesc'>$Product[Description]</span><br><span class='ProductPrice'>".($Product["Discount"] ? "<span class='ProductOldPrice'>€$Product[Price]</span> <span class='ProductNewPrice'>€".$Product["Price"]-$Product["Discount"]."</span>" : "€".$Product["Price"])."</span><br><form action='products.php' method='post'><input type='hidden' name='ClickedProductId' value='$Product[Id]'><input type='submit' class='ProductButton' value='In Winkelmandje'></form></div>";
+    if (!empty($FilteredProducts)) {
+        foreach ($FilteredProducts as $Product) {
+            echo "<div class='ProductCard'><h2 class='ProductTitle'>$Product[Title]</h2><br><img src='$Product[Img]' alt='Product Image' class='ProductImg'><br><span class='ProductDesc'>$Product[Description]</span><br><span class='ProductPrice'>".($Product["Discount"] ? "<span class='ProductOldPrice'>€$Product[Price]</span> <span class='ProductNewPrice'>€".$Product["Price"]-$Product["Discount"]."</span>" : "€".$Product["Price"])."</span><br><form action='products.php' method='post'><input type='hidden' name='ClickedProductId' value='$Product[Id]'><input type='submit' class='ProductButton' value='In Winkelmandje'></form></div>";
+        }
+    } else {
+        echo "<h3>No Products Found.</h3>";
     }
     ?>
 </div>
@@ -64,3 +92,8 @@ $DBHandler->CloseConn();
 <?php include('Prefabs/footer.html') ?>
 </body>
 </html>
+<script>
+    function submitCategoryForm() {
+        document.getElementById("CategoryForm").submit()
+    }
+</script>
