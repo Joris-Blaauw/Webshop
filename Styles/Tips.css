@@ -1,7 +1,3 @@
-body {
-    background-color: var(--secondary-accent);
-}
-
 .TipHeader {
     color:var(--accent);
     font-family:var(--text-font);
