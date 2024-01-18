@@ -2,11 +2,10 @@
 // Loading shared class
 require 'Prefabs/Shared.php';
 $DBHandler = new Shared\DB("Tips");
-$Queries = new Shared\Queries();
 
 // Fetch page info and tips out of database
 $PageInfo = $DBHandler->FetchPageInfo();
-$Tips = $DBHandler->FetchAssoc("SELECT Title, Content, Img FROM section WHERE Page = 'Tips' ORDER BY Ordrr");
+$Tips = $DBHandler->FetchAssoc("SELECT Title, Content, Img FROM section WHERE Page = 'Tips'");
 
 $DBHandler->CloseConn();
 ?>
@@ -16,6 +15,7 @@ $DBHandler->CloseConn();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/favicon.png">
     <link href="Prefabs/defaultStyle.css" rel="stylesheet">
     <link rel="stylesheet" href="Styles/Tips.css">
     <title><?php echo $PageInfo["Title"]?></title>
