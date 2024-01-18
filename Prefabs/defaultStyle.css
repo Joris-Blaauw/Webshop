@@ -103,3 +103,77 @@ body { /* Remove the default body styling and add a minimum height of the whole 
     color: #777;
     font-family: var(--text-font);
 }
+
+.popup {
+    z-index: 100;
+    border-radius: 15px;
+    min-width: 40%;
+    border: solid var(--accent) 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--tertiary);
+    font-family: var(--text-font);
+}
+
+.popup input {
+    margin: 0 auto 1rem auto;
+    display: block;
+    font-size: var(--text-size);
+}
+
+.popup button {
+    margin: 0 auto 1rem auto;
+    display: block;
+    font-size: var(--text-size);
+}
+
+.popup select {
+    margin: 0 auto 0 auto;
+    display: block;
+    font-size: var(--text-size);
+}
+
+.popup textarea {
+    margin: 0 auto 0 auto;
+    display: block;
+    font-size: var(--text-size);
+    resize: none;
+    width: 50%;
+    min-height: 6rem;
+}
+
+.popup label {
+    text-align: center;
+    display: block;
+    color: var(--accent);
+    font-family: var(--text-font);
+    font-size: calc(var(--text-size) * 1.5);
+}
+
+.popup h2 {
+    margin-bottom: 0;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    font-family: var(--text-font);
+    font-size: calc(var(--title-size) * 0.6);
+    color: var(--accent);
+}
+
+.PopupInputContainer {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.PopupSubmitButton {
+    background-color: var(--success-color);
+}
+
+.PopupCancelButton {
+    background-color: var(--neutral-color);
+}

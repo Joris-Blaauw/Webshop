@@ -29,6 +29,16 @@ class DB {
         $this->conn = $conn;
         $this->PageName = $PageName;
     }
+    /**
+     * Function to execute a query on the database without returning data
+     *
+     * @param string $sql SQL Query to run on the database
+     * @return bool Success
+     */
+    public function ExecuteQuery(string $sql): bool
+    {
+        return mysqli_query($this->conn, $sql);
+    }
 
     /**
      * Function to fetch data from the database
@@ -73,8 +83,4 @@ class DB {
     {
         mysqli_close($this->conn);
     }
-}
-
-class Queries {
-    public string $GetProducts = "SELECT * FROM product";
 }

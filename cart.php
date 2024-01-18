@@ -35,7 +35,6 @@ if (array_key_exists("DeleteItemId", $_POST)) { // If the "DeleteItemId" key exi
 
 require 'Prefabs/Shared.php'; // Add Shared Class (db manager and stuff)
 $DBHandler = new Shared\DB("Cart");
-$Queries = new Shared\Queries();
 
 $PageInfo = $DBHandler->FetchPageInfo(); // Fetch Page Info
 
@@ -49,6 +48,7 @@ $DBHandler->CloseConn();
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $PageInfo["Title"]?></title>
+    <link rel="icon" href="Images/favicon.png">
     <link rel="stylesheet" href="Prefabs/defaultStyle.css">
     <link rel="stylesheet" href="Styles/Cart.css">
 </head>
