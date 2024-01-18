@@ -29,7 +29,7 @@ if (array_key_exists("TipTitle", $_POST)) {if (array_key_exists("TipContent", $_
 // Same as for the tips, but for the products.
 if (array_key_exists("ProductTitle", $_POST)) {if (array_key_exists("ProductImage", $_POST)) {if (array_key_exists("ProductDescription", $_POST)) {if (array_key_exists("ProductPrice", $_POST)) {if (array_key_exists("ProductDiscount", $_POST)) {if (array_key_exists("ProductCategory", $_POST)) {if (strlen($_POST["ProductTitle"]) < 256) {if (strlen($_POST["ProductDescription"]) < 256) {if (strlen($_POST["ProductImage"]) < 256) {
     $FormattedCategories = implode(',',$_POST["ProductCategory"]);
-    $DBHandler->ExecuteQuery("INSERT INTO product (Title, Img, Description, Price, Discount, Category) VALUES ('$_POST[ProductTitle]','$_POST[ProductImage]','$_POST[ProductDescription]',$_POST[ProductPrice],$_POST[ProductPrice],'$FormattedCategories')");
+    $DBHandler->ExecuteQuery("INSERT INTO product (Title, Img, Description, Price, Discount, Category) VALUES ('$_POST[ProductTitle]','$_POST[ProductImage]','$_POST[ProductDescription]',$_POST[ProductPrice],$_POST[ProductDiscount],'$FormattedCategories')");
     unset($_POST["ProductTitle"]);
     unset($_POST["ProductImage"]);
     unset($_POST["ProductDescription"]);
